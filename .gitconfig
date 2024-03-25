@@ -1,0 +1,8 @@
+[user]
+    name = Timofey Nikolaev
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+[push]
+    autoSetupRemote = true
