@@ -12,6 +12,7 @@ if [ ! -d "$WORKSPACE_DIR" ]; then
 fi
 
 echo $USER
+export
 cd "$WORKSPACE_DIR"
 git pull || echo "Could not pull latest changes automatically."
 bazelisk run $TARGET
