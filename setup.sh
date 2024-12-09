@@ -7,17 +7,20 @@ VENV_LOCATION='.ohmmeter_venv'
 WORKSPACE_DIR="/workspaces/jupyter"
 HOSTNAME=$(hostname).coder.pods.max.avride.ai
 
+echo $USER
+export
+
 if [ ! -d "$WORKSPACE_DIR" ]; then
     git clone https://github.com/avride/av "$WORKSPACE_DIR"
 fi
 
-echo $USER
-export
 cd "$WORKSPACE_DIR"
 git pull || echo "Could not pull latest changes automatically."
-bazelisk run $TARGET
-sleep 1
-nohup $VENV_LOCATION/bin/jupyter lab --ip '::' --no-browser --IdentityProvider.token='' &
+su -l vscode -c "
+    bazelisk run $TARGET
+    sleep 1
+    nohup $VENV_LOCATION/bin/jupyter lab --ip '::' --no-browser --IdentityProvider.token='' &
+"
 
 # tmux new-session -d -s jupyter || echo "Session already exists."
 # sleep 5
