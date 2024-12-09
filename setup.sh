@@ -11,6 +11,7 @@ if [ ! -d "$WORKSPACE_DIR" ]; then
     git clone https://github.com/avride/av "$WORKSPACE_DIR"
 fi
 
+echo $USER
 cd "$WORKSPACE_DIR"
 git pull || echo "Could not pull latest changes automatically."
 bazelisk run $TARGET
