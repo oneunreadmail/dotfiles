@@ -30,4 +30,4 @@ tmux send-keys -t jupyter "cd $WORKSPACE_DIR" C-m
 tmux send-keys -t jupyter "bazelisk run $TARGET" C-m
 tmux send-keys -t jupyter "source $VENV_LOCATION/bin/activate" C-m
 tmux send-keys -t jupyter "cd /workspaces/av" C-m
-tmux send-keys -t jupyter "jupyter lab --ip '::' --no-browser --IdentityProvider.token='' C-m
+tmux send-keys -t jupyter "jupyter lab --ip '::' --no-browser --IdentityProvider.token=''" C-m
