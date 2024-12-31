@@ -12,11 +12,11 @@ if [ ! -d "$WORKSPACE_DIR" ]; then
     git clone https://github.com/avride/av "$WORKSPACE_DIR"
 fi
 
+PATH="/home/vscode/.nix-profile/bin:$PATH"
 cd $WORKSPACE_DIR
 git pull || echo "Could not pull latest changes automatically."
 bazelisk build $TARGET
 
-PATH="/home/vscode/.nix-profile/bin:$PATH"
 tmux new-session -d -s jupyter || echo "Session already exists."
 sleep 5
 tmux send-keys -t jupyter "
