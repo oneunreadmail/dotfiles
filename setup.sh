@@ -15,7 +15,7 @@ fi
 PATH="/home/vscode/.nix-profile/bin:$PATH"
 cd $WORKSPACE_DIR
 git pull || echo "Could not pull latest changes automatically."
-bazelisk build $TARGET
+bazelisk build $TARGET --check_visibility=false
 
 tmux new-session -d -s jupyter || echo "Session already exists."
 sleep 5
