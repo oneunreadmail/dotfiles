@@ -1,5 +1,6 @@
 code -v
 code --install-extension charliermarsh.ruff
+code --install-extension debugpyattacher.debugpy-attacher
 code --install-extension eamodio.gitlens
 code --install-extension gaborv.flatbuffers
 code --install-extension github.vscode-pull-request-github
