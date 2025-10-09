@@ -7,8 +7,6 @@ VENV_LOCATION='.ohmmeter_venv'
 WORKSPACE_DIR='/workspaces/jupyter'
 NOTEBOOK_DIR="/workspaces/av/junk/$AVRIDE_LOGIN"
 
-./vscode-extensions.sh
-
 if [ ! -d "$WORKSPACE_DIR" ]; then
     # git clone https://github.com/avride/av "$WORKSPACE_DIR"
     git worktree add "$WORKSPACE_DIR" ohmmeter-jupyter
