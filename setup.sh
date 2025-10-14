@@ -13,9 +13,16 @@ if [ ! -d "$WORKSPACE_DIR" ]; then
 fi
 
 cd $WORKSPACE_DIR
+
+git stash || true
+git switch ohmmeter-jupyter
 git fetch origin main
-git rebase origin/main || git rebase --abort || true
-git push -f
+git merge origin/main --no-edit || {
+    echo "Merge conflict detected. Please resolve manually."
+    exit 1
+}
+git push origin ohmmeter-jupyter || true
+git stash pop || true
 
 PATH="/home/vscode/.nix-profile/bin:$PATH"
 bazelisk build $TARGET --check_visibility=false
