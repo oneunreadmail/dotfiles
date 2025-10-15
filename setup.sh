@@ -8,7 +8,7 @@ WORKSPACE_DIR='/workspaces/jupyter'
 NOTEBOOK_DIR="/workspaces/av/junk/$AVRIDE_LOGIN"
 
 if [ ! -d "$WORKSPACE_DIR" ]; then
-    # git clone https://github.com/avride/av "$WORKSPACE_DIR"
+    cd '/workspaces/av'
     git worktree add "$WORKSPACE_DIR" ohmmeter-jupyter
 fi
 
