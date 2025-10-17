@@ -31,7 +31,7 @@ tmux new-session -d -s jupyter || echo "Session already exists."
 sleep 5
 tmux send-keys -t jupyter "
     cd $WORKSPACE_DIR
-    bazelisk run $TARGET
+    bazelisk run $TARGET --check_visibility=false
     source $VENV_LOCATION/bin/activate
     jupyter lab \
     --ip '::' \
