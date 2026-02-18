@@ -5,7 +5,7 @@ set -e
 TARGET='//junk/ohmmeter:ohmmeter_venv'
 VENV_LOCATION='.ohmmeter_venv'
 WORKSPACE_DIR='/workspaces/jupyter'
-NOTEBOOK_DIR="/workspaces/av/junk/$AVRIDE_LOGIN"
+DEFAULT_URL="/tree/junk/$AVRIDE_LOGIN"
 
 if [ ! -d "$WORKSPACE_DIR" ]; then
     cd '/workspaces/av'
@@ -33,10 +33,10 @@ tmux send-keys -t jupyter "
     cd $WORKSPACE_DIR
     bazelisk run $TARGET --check_visibility=false
     source $VENV_LOCATION/bin/activate
-    jupyter lab \
-    --ip '::' \
+    jupyter-lab \
+    --ip '0.0.0.0' \
     --no-browser \
-    --ServerApp.root_dir='/workspaces/av' \
-    --ServerApp.notebook_dir=$NOTEBOOK_DIR \
+    --ServerApp.root_dir='/workspaces/av/' \
+    --NotebookApp.default_url=$DEFAULT_URL \
     --NotebookApp.custom_display_url=http://$WORKSPACE_FQDN:8888 \
 " C-m
