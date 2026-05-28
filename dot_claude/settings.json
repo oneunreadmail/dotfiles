@@ -1,5 +1,6 @@
 {
   "skipAutoPermissionPrompt": true,
+  "skipDangerousModePermissionPrompt": true,
   "includeCoAuthoredBy": false,
   "attribution": {
     "commit": "",
