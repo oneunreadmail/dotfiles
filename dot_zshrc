@@ -200,3 +200,6 @@ venv() {
 
 # The next line updates PATH for Nebius CLI.
 if [ -f "$HOME/.nebius/path.zsh.inc" ]; then source "$HOME/.nebius/path.zsh.inc"; fi
+
+mkdir -p "$HOME/.llm"
+export LLM_USER_PATH="$HOME/.llm"

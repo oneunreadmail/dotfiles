@@ -1,0 +1,5 @@
+- model_name: moonshotai/Kimi-K2.6
+  model_id: kimi
+  api_base: https://api.tokenfactory.us-central1.nebius.com/v1/
+  api_key_name: nebius
+
